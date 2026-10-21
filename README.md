@@ -154,4 +154,4 @@ See the [Next.js deployment docs](https://nextjs.org/docs/app/building-your-appl
 
 **If you find this project helpful, please consider giving it a ⭐ on GitHub!**
 
-[Back to Top](#-taskly---nextjs-authentication-todo-app)
+[⬆️ Back to Top](#taskly--nextjs-authentication-todo-app)
