@@ -49,9 +49,7 @@ export default async function TodosPage() {
   const tasks = rows as Task[];
   const completed = tasks.filter((task) => Boolean(task.completed)).length;
   const pending = tasks.length - completed;
-  const progress = tasks.length
-    ? Math.round((completed / tasks.length) * 100)
-    : 0;
+  const progress = tasks.length ? Math.round((completed / tasks.length) * 100) : 0;
   const today = new Intl.DateTimeFormat("en-US", {
     weekday: "long",
     month: "long",
@@ -132,7 +130,10 @@ export default async function TodosPage() {
               value={tasks.length}
               accent="text-slate-950"
             />
-            <Stat label="In progress" value={pending} accent="text-amber-600" />
+            <Stat
+              label="In progress"
+              value={pending}
+              accent="text-amber-600" />
             <Stat
               label="Completed"
               value={`${progress}%`}
@@ -144,9 +145,7 @@ export default async function TodosPage() {
               <div>
                 <h2 className="text-lg font-black">My task list</h2>
                 <p className="mt-1 text-sm text-slate-500">
-                  {tasks.length === 0
-                    ? "Start with one small thing."
-                    : `${completed} completed · ${pending} remaining`}
+                  {tasks.length === 0 ? "Start with one small thing." : `${completed} completed · ${pending} remaining`}
                 </p>
               </div>
               <span className="rounded-full bg-indigo-50 px-3 py-1.5 text-xs font-bold text-indigo-600">
@@ -188,10 +187,7 @@ export default async function TodosPage() {
               ) : (
                 tasks.map((task, index) => {
                   const isCompleted = Boolean(task.completed);
-                  const isNewGroup =
-                    index === 0 ||
-                    formatDate(tasks[index - 1].created_at) !==
-                      formatDate(task.created_at);
+                  const isNewGroup = index === 0 || formatDate(tasks[index - 1].created_at) !== formatDate(task.created_at);
                   return (
                     <div key={task.id} className="space-y-3">
                       {isNewGroup && (

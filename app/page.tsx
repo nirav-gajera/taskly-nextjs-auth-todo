@@ -81,8 +81,7 @@ export default async function HomePage() {
             </Link>
           </div>
           <p className="mt-5 text-sm text-slate-500">
-            <span className="mr-2 text-emerald-500">●</span> Free to get started
-            · No complicated setup
+            <span className="mr-2 text-emerald-500">●</span> Free to get started · No complicated setup
           </p>
         </div>
         <div className="relative mx-auto w-full max-w-lg lg:ml-auto">
@@ -131,11 +130,7 @@ export default async function HomePage() {
                       {index === 0 ? "✓" : ""}
                     </span>
                     <span
-                      className={
-                        index === 0
-                          ? "text-sm text-slate-400 line-through"
-                          : "text-sm font-semibold text-slate-700"
-                      }
+                      className={index === 0 ? "text-sm text-slate-400 line-through" : "text-sm font-semibold text-slate-700"}
                     >
                       {task}
                     </span>
@@ -146,9 +141,7 @@ export default async function HomePage() {
           </div>
           <div className="absolute -bottom-5 -right-4 rounded-2xl border border-white bg-white px-4 py-3 shadow-xl shadow-indigo-900/10">
             <p className="text-xs font-semibold text-slate-400">COMPLETED</p>
-            <p className="mt-1 text-lg font-black text-emerald-600">
-              12 tasks 🎉
-            </p>
+            <p className="mt-1 text-lg font-black text-emerald-600">12 tasks 🎉</p>
           </div>
         </div>
       </section>
