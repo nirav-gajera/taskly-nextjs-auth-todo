@@ -20,6 +20,11 @@ const features = [
 ];
 
 export const instant = false;
+export const currentDateTime = new Date().toLocaleString("en-IN", {
+  timeZone: "Asia/Kolkata",
+  dateStyle: "full",
+});
+export const currentHour = new Date().getHours();
 
 export default async function HomePage() {
   const session = await getSession();
@@ -67,6 +72,13 @@ export default async function HomePage() {
             mind.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+             {session ? (
+              <Link href="/todos" className="rounded-xl bg-indigo-600 px-4 py-2.5 text-white shadow-lg shadow-indigo-600/20 transition hover:-translate-y-0.5 hover:bg-indigo-700">
+              Dashboard <span className="ml-1">→</span>
+            </Link>
+             ) : (
+              <>
+              
             <Link
               href="/register"
               className="inline-flex items-center justify-center gap-3 rounded-2xl bg-indigo-600 px-6 py-4 font-bold text-white shadow-xl shadow-indigo-600/25 transition hover:-translate-y-1 hover:bg-indigo-700"
@@ -79,13 +91,15 @@ export default async function HomePage() {
             >
               I already have an account
             </Link>
+            </>
+          )}
           </div>
           <p className="mt-5 text-sm text-slate-500">
             <span className="mr-2 text-emerald-500">●</span> Free to get started · No complicated setup
           </p>
         </div>
         <div className="relative mx-auto w-full max-w-lg lg:ml-auto">
-          <div className="absolute -left-5 top-12 z-10 rounded-2xl border border-white/80 bg-white/90 px-4 py-3 shadow-xl shadow-indigo-900/10 backdrop-blur sm:-left-10">
+          <div className="absolute -left-5 top-14 z-10 rounded-2xl border border-white/80 bg-white/90 px-4 py-3 shadow-xl shadow-indigo-900/10 backdrop-blur sm:-left-10">
             <p className="text-xs font-semibold text-slate-500">
               TODAY&apos;S PROGRESS
             </p>
@@ -96,10 +110,15 @@ export default async function HomePage() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-widest text-indigo-600">
-                    Tuesday, October 14
+                    {currentDateTime}
                   </p>
                   <h2 className="mt-2 text-2xl font-black">
-                    Good morning, John
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Good{" "}
+                    {currentHour < 12
+                      ? "Morning"
+                      : currentHour < 18
+                      ? "Afternoon"
+                      : "Evening"}, John
                   </h2>
                 </div>
                 <span className="text-3xl">☀️</span>
