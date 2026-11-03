@@ -78,7 +78,7 @@ export default async function TodosPage() {
               {user.name.charAt(0).toUpperCase()}
             </div>
             <form action={logout}>
-              <button className="rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-bold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50">
+              <button className="rounded-xl border border-slate-200 px-3.5 py-2 text-sm font-bold text-slate-600 transition hover:border-slate-300 hover:bg-slate-50 cursor-pointer">
                 Log out
               </button>
             </form>
@@ -91,7 +91,7 @@ export default async function TodosPage() {
             Workspace
           </p>
           <div className="mt-4 space-y-1">
-            <div className="flex items-center gap-3 rounded-xl bg-indigo-50 px-4 py-3 text-sm font-bold text-indigo-700">
+            <div className="flex items-center gap-3 rounded-xl bg-indigo-50 px-4 py-3 text-sm font-bold text-indigo-700 transition hover:-translate-y-0.5 cursor-pointer border border-indigo-200 shadow-sm">
               <span>▣</span> My tasks
             </div>
             <div className="flex items-center gap-3 rounded-xl px-4 py-3 text-sm font-semibold text-slate-500">
@@ -169,7 +169,7 @@ export default async function TodosPage() {
                 placeholder="Add a new task..."
                 className="min-w-0 flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 outline-none transition placeholder:text-slate-400 focus:border-indigo-500 focus:bg-white focus:ring-4 focus:ring-indigo-500/10"
               />
-              <button className="rounded-xl bg-indigo-600 px-5 py-3.5 font-bold text-white shadow-lg shadow-indigo-600/20 transition hover:-translate-y-0.5 hover:bg-indigo-700">
+              <button className="rounded-xl bg-indigo-600 px-5 py-3.5 font-bold text-white shadow-lg shadow-indigo-600/20 transition hover:-translate-y-0.5 hover:bg-indigo-700 cursor-pointer">
                 + Add task
               </button>
             </form>
@@ -206,7 +206,7 @@ export default async function TodosPage() {
                             aria-label={
                               isCompleted ? "Mark incomplete" : "Mark complete"
                             }
-                            className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 text-sm transition ${isCompleted ? "border-emerald-500 bg-emerald-500 text-white" : "border-slate-300 text-transparent hover:border-indigo-500"}`}
+                            className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg border-2 text-sm transition cursor-pointer ${isCompleted ? "border-emerald-500 bg-emerald-500 text-white" : "border-slate-300 text-transparent hover:border-indigo-500"}`}
                           >
                             ✓
                           </button>
@@ -223,7 +223,7 @@ export default async function TodosPage() {
                                 defaultValue={task.title}
                                 className={`min-w-0 flex-1 bg-[#d3d3d375] p-[5px] rounded-[10px] text-sm font-semibold outline-none ${isCompleted ? "text-slate-400 line-through" : "text-slate-700"}`}
                               />
-                              <button className="rounded-lg px-2 py-1 text-xs font-bold text-indigo-600 opacity-0 transition hover:bg-indigo-50 group-hover:opacity-100 focus:opacity-100">
+                              <button className="rounded-lg px-2 py-1 text-xs font-bold text-indigo-600 opacity-0 transition hover:bg-indigo-50 group-hover:opacity-100 focus:opacity-100 cursor-pointer">
                                 Save
                               </button>
                             </div>
@@ -244,7 +244,7 @@ export default async function TodosPage() {
                           <input type="hidden" name="taskId" value={task.id} />
                           <button
                             aria-label="Delete task"
-                            className="rounded-lg px-2 py-1 text-sm text-slate-300 transition hover:bg-red-50 hover:text-red-500"
+                            className="rounded-lg px-2 py-1 text-sm text-slate-300 transition hover:bg-red-50 hover:text-red-500 cursor-pointer"
                           >
                             x
                           </button>
@@ -272,7 +272,7 @@ function Stat({
   accent: string;
 }) {
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm">
+    <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 ">
       <p className="text-sm font-semibold text-slate-500">{label}</p>
       <p className={`mt-2 text-3xl font-black ${accent}`}>{value}</p>
     </div>

@@ -18,7 +18,7 @@ export default function DeleteTaskButton({
         type="button"
         aria-label={`Delete ${title}`}
         onClick={() => setIsOpen(true)}
-        className="rounded-lg px-2 py-1 text-sm text-slate-300 transition hover:bg-red-50 hover:text-red-500"
+        className="rounded-lg px-2 py-1 text-sm text-slate-300 transition hover:bg-red-50 hover:text-red-500 cursor-pointer"
       >
         ×
       </button>
@@ -58,13 +58,13 @@ export default function DeleteTaskButton({
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50"
+                className="rounded-xl border border-slate-200 px-4 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50 cursor-pointer"
               >
                 Cancel
               </button>
               <form action={deleteTask}>
                 <input type="hidden" name="taskId" value={taskId} />
-                <button className="rounded-xl bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700">
+                <button className="rounded-xl bg-red-600 px-4 py-3 text-sm font-bold text-white shadow-lg shadow-red-600/20 transition hover:bg-red-700 cursor-pointer">
                   Delete task
                 </button>
               </form>
